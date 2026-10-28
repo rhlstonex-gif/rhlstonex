@@ -2,6 +2,34 @@ const toggle = document.querySelector('.menu'), nav = document.querySelector('.h
 toggle.addEventListener('click', () => { const open = nav.classList.toggle('open'); toggle.setAttribute('aria-expanded', String(open)); toggle.setAttribute('aria-label', open ? 'Close navigation' : 'Open navigation') });
 nav.querySelectorAll('a').forEach(a => a.addEventListener('click', () => { nav.classList.remove('open'); toggle.setAttribute('aria-expanded', 'false') }));
 document.getElementById('year').textContent = new Date().getFullYear();
+const pageLoader = document.querySelector('.page-loader');
+if (pageLoader) {
+    const hideLoader = () => {
+        const fillAnimation = pageLoader.querySelector('.page-loader-logo img:last-child').getAnimations()[0];
+        const remainingAnimationTime = fillAnimation
+            ? Math.max(0, 1100 - Number(fillAnimation.currentTime || 0))
+            : 0;
+        window.setTimeout(() => {
+            pageLoader.classList.add('is-hidden');
+            document.documentElement.classList.remove('loading-enabled');
+            window.setTimeout(() => pageLoader.remove(), 450);
+        }, remainingAnimationTime);
+    };
+
+    if (document.readyState === 'complete') {
+        hideLoader();
+    } else {
+        window.addEventListener('load', hideLoader, { once: true });
+    }
+}
+document.querySelectorAll('[data-interest]').forEach(link => {
+    link.addEventListener('click', () => {
+        const interest = document.querySelector('#enquiry select[name="interest"]');
+        if (interest) {
+            interest.value = link.dataset.interest;
+        }
+    });
+});
 document.getElementById('enquiry').addEventListener('submit', e => {
     e.preventDefault();
     const form = e.currentTarget;

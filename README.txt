@@ -4,11 +4,13 @@ FILES
 - index.html: complete multi-section responsive website
 - styles.css: layout, typography, monochrome theme and mobile styling
 - script.js: mobile navigation, current year, and WhatsApp enquiry form behavior
+- products/: six product detail pages for Natural Stone, Artificial Stone, Stone Textures, Pebbles & Aggregates, Semi-Precious Stone, and Stone Accessories & Installation
 
 PREVIEW
 1. Extract the ZIP.
 2. Open index.html in a modern browser.
-3. Internet is required for Google Fonts and the remote Unsplash photographs.
+3. Select a product card to open its detail page. Each product page uses the shared site header, enquiry form, and footer with its own banner image.
+4. Internet is required for Google Fonts and the remote Unsplash photographs.
 
 BEFORE PUBLISHING
 1. Verify the WhatsApp number used by the floating WhatsApp button (+91 90792 37447) and update it if needed.
