@@ -2,6 +2,30 @@ const toggle = document.querySelector('.menu'), nav = document.querySelector('.h
 toggle.addEventListener('click', () => { const open = nav.classList.toggle('open'); toggle.setAttribute('aria-expanded', String(open)); toggle.setAttribute('aria-label', open ? 'Close navigation' : 'Open navigation') });
 nav.querySelectorAll('a').forEach(a => a.addEventListener('click', () => { nav.classList.remove('open'); toggle.setAttribute('aria-expanded', 'false') }));
 document.getElementById('year').textContent = new Date().getFullYear();
-// Replace this placeholder with RHL StoneX's confirmed official email before publishing.
-const BUSINESS_EMAIL = 'ADD_OFFICIAL_EMAIL_HERE';
-document.getElementById('enquiry').addEventListener('submit', e => { e.preventDefault(); const d = new FormData(e.currentTarget), status = document.getElementById('status'); if (BUSINESS_EMAIL === 'ADD_OFFICIAL_EMAIL_HERE') { status.textContent = 'The form is ready, but the official business email has not been configured. Add it in script.js before publishing.'; return } const subject = encodeURIComponent('RHL StoneX enquiry — ' + d.get('interest')); const body = encodeURIComponent('Name: ' + d.get('name') + '\nCompany: ' + (d.get('company') || 'Not provided') + '\nEmail: ' + d.get('email') + '\nPhone: ' + (d.get('phone') || 'Not provided') + '\nInterest: ' + d.get('interest') + '\n\nProject details:\n' + d.get('message')); location.href = `mailto:${BUSINESS_EMAIL}?subject=${subject}&body=${body}` });
+document.getElementById('enquiry').addEventListener('submit', e => {
+    e.preventDefault();
+    const form = e.currentTarget;
+    const data = new FormData(form);
+    const status = document.getElementById('status');
+    const whatsappLink = document.querySelector('.whatsapp-float').href;
+    const whatsappNumber = new URL(whatsappLink).pathname.slice(1);
+    const message = [
+        'RHL StoneX enquiry',
+        '',
+        `Name: ${data.get('name')}`,
+        `Company: ${data.get('company') || 'Not provided'}`,
+        `Email: ${data.get('email')}`,
+        `Phone: ${data.get('phone') || 'Not provided'}`,
+        `Interest: ${data.get('interest')}`,
+        '',
+        'Project details:',
+        data.get('message')
+    ].join('\n');
+    const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
+    const whatsappTab = document.createElement('a');
+    whatsappTab.href = whatsappUrl;
+    whatsappTab.target = '_blank';
+    whatsappTab.rel = 'noopener noreferrer';
+    whatsappTab.click();
+    status.textContent = 'Your enquiry is ready in WhatsApp. Review the details and tap Send to deliver it.';
+});

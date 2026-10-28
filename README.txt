@@ -3,7 +3,7 @@ RHL STONEX WEBSITE — QUICK START
 FILES
 - index.html: complete multi-section responsive website
 - styles.css: layout, typography, monochrome theme and mobile styling
-- script.js: mobile navigation, current year, and enquiry form behavior
+- script.js: mobile navigation, current year, and WhatsApp enquiry form behavior
 
 PREVIEW
 1. Extract the ZIP.
@@ -11,13 +11,13 @@ PREVIEW
 3. Internet is required for Google Fonts and the remote Unsplash photographs.
 
 BEFORE PUBLISHING
-1. In script.js, replace ADD_OFFICIAL_EMAIL_HERE with the confirmed official business email.
-2. In index.html, replace the phone and email placeholders with verified contact details.
+1. Verify the WhatsApp number used by the floating WhatsApp button (+91 90792 37447) and update it if needed.
+2. Replace the phone and email placeholders with verified contact details.
 3. Check product availability and all business claims.
 4. Use properly licensed images for the final public site if needed.
-5. Test the enquiry form after configuring the email address.
+5. Test the enquiry form. It opens a prefilled WhatsApp message; the visitor must tap Send.
 
-The enquiry form uses the visitor's email application; it does not send data to a server. This is a front-end starter and is not hosted/live yet.
+The enquiry form opens a prefilled WhatsApp message using the number on the floating WhatsApp button. The visitor must review and send the message in WhatsApp. This front-end form does not automatically send WhatsApp messages or store data on a server.
 
 Brand: RHL StoneX
 Tagline (exact): One stop solution for all Stone need

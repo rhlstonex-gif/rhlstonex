@@ -84,9 +84,9 @@
                 <article class="card">
                     <div class="photo quartz"></div>
                     <div class="overlay"></div>
-                    <div class="cardcopy"><small>03 / SURFACES</small>
-                        <h3>Quartz</h3>
-                        <p>Contemporary surface choices for refined residential and commercial spaces.</p><a
+                    <div class="cardcopy"><small>03 / FINISHES</small>
+                        <h3>Stone Textures</h3>
+                        <p>Bring walls to life with distinctive stone textures that add depth, character, and timeless elegance to every space.</p><a
                             href="#contact">↗</a>
                     </div>
                 </article>
@@ -111,9 +111,9 @@
                 <article class="card">
                     <div class="photo texture"></div>
                     <div class="overlay"></div>
-                    <div class="cardcopy"><small>06 / FINISHES</small>
-                        <h3>Stone Textures & Installation</h3>
-                        <p>Texture-led finishes and installation coordination for considered spaces.</p><a
+                    <div class="cardcopy"><small>06 / ACCESSORIES & INSTALLATION</small>
+                        <h3>Stone Accessories & Installation</h3>
+                        <p>Thoughtfully sourced stone accessories and professional installation coordination for a seamless finish.</p><a
                             href="#contact">↗</a>
                     </div>
                 </article>
@@ -233,11 +233,11 @@
                     </div>
                 </aside>
                 <form id="enquiry">
-                    <div class="formrow"><label>Your name<input name="name" required
-                                placeholder="Full name"></label><label>Company<input name="company"
+                    <div class="formrow"><label>Your name<input name="name" maxlength="100" required
+                                placeholder="Full name"></label><label>Company<input name="company" maxlength="100"
                                 placeholder="Company name"></label></div>
-                    <div class="formrow"><label>Work email<input name="email" type="email" required
-                                placeholder="you@company.com"></label><label>Phone / WhatsApp<input name="phone"
+                    <div class="formrow"><label>Work email<input name="email" type="email" maxlength="254" required
+                                placeholder="you@company.com"></label><label>Phone / WhatsApp<input name="phone" maxlength="40"
                                 placeholder="Include country code"></label></div><label>I'm enquiring about<select
                             name="interest" required>
                             <option value="">Choose a category</option>
@@ -249,11 +249,10 @@
                             <option>Stone textures & installation</option>
                             <option>Export / distribution</option>
                             <option>Other / multiple materials</option>
-                        </select></label><label>Project details<textarea name="message" rows="4" required
+                        </select></label><label>Project details<textarea name="message" rows="4" maxlength="1000" required
                             placeholder="Material, application, approximate quantity, finish and delivery location…"></textarea></label><button
-                        class="btn darkbtn" type="submit">Prepare enquiry ↗</button>
-                    <p class="formnote">This form prepares an email in your email application. Configure the official
-                        business email in script.js before publishing.</p>
+                        class="btn darkbtn" type="submit">Continue to WhatsApp ↗</button>
+                    <p class="formnote">Your enquiry details will be prepared in WhatsApp. Review the message and tap Send to deliver it.</p>
                     <p id="status" role="status"></p>
                 </form>
             </div>
