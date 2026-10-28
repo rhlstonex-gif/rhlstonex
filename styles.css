@@ -1,0 +1,999 @@
+* {
+    box-sizing: border-box
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 90px
+}
+
+body {
+    margin: 0;
+    background: #f3f2ef;
+    color: #1d1d1b;
+    font: 15px/1.65 "DM Sans", Arial, sans-serif
+}
+
+a {
+    color: inherit;
+    text-decoration: none
+}
+
+button,
+input,
+textarea,
+select {
+    font: inherit
+}
+
+.announcement {
+    height: 32px;
+    background: #171717;
+    color: #c9c8c4;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 5.5%;
+    font-size: 9px;
+    letter-spacing: 1.8px
+}
+
+.header {
+    height: 104px;
+    padding: 12px 5.5%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #f3f2ef;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    border-bottom: 1px solid #d9d8d3
+}
+
+.brand {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 154px;
+    line-height: 1
+}
+
+.brand img {
+    display: block;
+    width: 128px;
+    height: auto;
+    margin-bottom: 4px
+}
+
+.brand small {
+    font-size: 7px;
+    letter-spacing: .2px;
+    margin-top: 0;
+    color: #5e5d58
+}
+
+.header nav {
+    display: flex;
+    align-items: center;
+    gap: 32px;
+    font-size: 12px
+}
+
+.header nav>a:not(.navcta) {
+    color: #4e4d49
+}
+
+.navcta {
+    background: #1b1b1a;
+    color: white;
+    padding: 13px 18px
+}
+
+.menu {
+    display: none;
+    border: 0;
+    background: none;
+    font-size: 25px
+}
+
+.hero {
+    height: min(740px, calc(100vh - 136px));
+    min-height: 590px;
+    background: #242422;
+    position: relative;
+    color: white;
+    display: flex;
+    align-items: center;
+    overflow: hidden
+}
+
+.hero-bg {
+    position: absolute;
+    inset: 0;
+    background: url("https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=2200&q=85") center 56%/cover;
+    filter: grayscale(50%);
+    transform: scale(1.02)
+}
+
+.hero-shade {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(90deg, #0f0f0fd1, #0f0f0f89 48%, #0f0f0f1f), linear-gradient(0deg, #0f0f0f80, transparent 35%)
+}
+
+.hero-copy {
+    position: relative;
+    z-index: 1;
+    width: min(760px, 80%);
+    margin-left: 10%;
+    margin-top: -25px
+}
+
+.eyebrow {
+    font-size: 10px;
+    letter-spacing: 2.2px;
+    text-transform: uppercase;
+    color: #65645e;
+    margin: 0 0 25px
+}
+
+.eyebrow.light {
+    color: #d7d5ce
+}
+
+.hero h1,
+h2 {
+    font: 500 clamp(46px, 6.2vw, 88px)/1.04 "Playfair Display", Georgia, serif;
+    letter-spacing: -2.6px;
+    margin: 0
+}
+
+.hero h1 em,
+h2 em {
+    font-weight: 500;
+    color: #b8b6af
+}
+
+.hero-copy>p:not(.eyebrow) {
+    max-width: 465px;
+    color: #e0dfd9;
+    font-size: 15px;
+    margin: 28px 0 32px;
+    line-height: 1.8
+}
+
+.actions {
+    display: flex;
+    align-items: center;
+    gap: 30px
+}
+
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 15px 19px;
+    font-size: 11px;
+    letter-spacing: .3px;
+    border: 1px solid transparent;
+    cursor: pointer
+}
+
+.lightbtn {
+    background: #f2f1ed;
+    color: #1b1b1a
+}
+
+.darkbtn {
+    background: #1b1b1a;
+    color: white
+}
+
+.under {
+    display: inline-block;
+    font-size: 12px;
+    border-bottom: 1px solid #99978f;
+    padding-bottom: 5px
+}
+
+.lightunder {
+    color: white;
+    border-color: #8d8b84
+}
+
+.hero-foot {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 5.5%;
+    font-size: 9px;
+    letter-spacing: 1.8px;
+    color: #e4e2dc;
+    border-top: 1px solid #ffffff4a
+}
+
+.pad {
+    padding: 110px 9%
+}
+
+.intro {
+    background: #f3f2ef
+}
+
+.intro>.eyebrow {
+    margin-bottom: 50px
+}
+
+.intro-grid {
+    display: grid;
+    grid-template-columns: 1.2fr .8fr;
+    gap: 10%;
+    align-items: end
+}
+
+.intro h2,
+.sectionhead h2,
+.about h2,
+.contact h2 {
+    font-size: clamp(40px, 4.8vw, 66px);
+    letter-spacing: -1.9px
+}
+
+.intro h2 em,
+.sectionhead h2 em,
+.about h2 em,
+.contact h2 em {
+    color: #77766f
+}
+
+.intro-grid p,
+.sectionhead>p,
+.aboutcopy>p:not(.eyebrow),
+.contacthead>p {
+    color: #66655f;
+    line-height: 1.9;
+    font-size: 13px;
+    margin: 0 0 24px
+}
+
+.intro hr {
+    border: 0;
+    border-top: 1px solid #d3d2cc;
+    margin: 60px 0 25px
+}
+
+.tagline {
+    font: clamp(22px, 3vw, 38px) "Playfair Display", Georgia, serif;
+    margin: 0
+}
+
+.tagline span {
+    font: 10px "DM Sans", sans-serif;
+    vertical-align: top
+}
+
+.products {
+    background: #e8e7e2
+}
+
+.sectionhead {
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+    gap: 8%;
+    margin-bottom: 45px
+}
+
+.sectionhead>p {
+    max-width: 370px;
+    margin: 0 0 5px
+}
+
+.sectionhead .eyebrow {
+    margin-bottom: 20px
+}
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 18px
+}
+
+.card {
+    height: 430px;
+    position: relative;
+    overflow: hidden;
+    background: #444
+}
+
+.photo {
+    position: absolute;
+    inset: 0;
+    background-size: cover;
+    background-position: center;
+    filter: grayscale(100%);
+    transition: transform .7s, filter .7s ease
+}
+
+.card:hover .photo {
+    transform: scale(1.05);
+    filter: grayscale(10%)
+}
+
+.natural {
+    background-image: url("https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&w=1200&q=80")
+}
+
+.artificial {
+    background-image: url("https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?auto=format&fit=crop&w=1200&q=80")
+}
+
+.quartz {
+    background-image: url("https://images.unsplash.com/photo-1600607687644-c7171b42498f?auto=format&fit=crop&w=1200&q=80")
+}
+
+.pebbles {
+    background-image: url("https://images.unsplash.com/photo-1518531933037-91b2f5f229cc?auto=format&fit=crop&w=1200&q=80")
+}
+
+.semi {
+    background-image: url("https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&w=1200&q=80")
+}
+
+.texture {
+    background-image: url("https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=1200&q=80")
+}
+
+.overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(0deg, #0e0e0eed, #0e0e0e2e 68%, transparent)
+}
+
+.cardcopy {
+    position: absolute;
+    left: 28px;
+    right: 25px;
+    bottom: 28px;
+    color: white
+}
+
+.cardcopy small {
+    font-size: 9px;
+    letter-spacing: 2px;
+    color: #d2d0c8
+}
+
+.cardcopy h3 {
+    font: 500 29px "Playfair Display", Georgia, serif;
+    margin: 10px 0
+}
+
+.cardcopy p {
+    font-size: 12px;
+    line-height: 1.7;
+    color: #e0dfd8;
+    max-width: 360px;
+    margin: 0 50px 0 0
+}
+
+.cardcopy>a {
+    position: absolute;
+    right: 0;
+    bottom: 4px;
+    border: 1px solid #b9b7b0;
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    font-size: 17px
+}
+
+.note {
+    font-size: 10px;
+    color: #77766f;
+    margin-top: 20px
+}
+
+.about {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10%;
+    align-items: center;
+    background: #f3f2ef
+}
+
+.aboutvisual {
+    position: relative;
+    min-height: 590px
+}
+
+.aboutphoto {
+    position: absolute;
+    inset: 0 7% 5% 0;
+    background: url("https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1100&q=85") center/cover;
+    filter: grayscale(100%)
+}
+
+.caption {
+    position: absolute;
+    left: 0;
+    right: 7%;
+    bottom: 0;
+    background: #242422;
+    color: #d7d6cf;
+    display: flex;
+    justify-content: space-between;
+    padding: 17px 20px;
+    font-size: 8px;
+    letter-spacing: 1.5px
+}
+
+.stamp {
+    position: absolute;
+    right: 0;
+    top: 38px;
+    background: #e1e0da;
+    border: 1px solid #c9c8c1;
+    border-radius: 50%;
+    width: 120px;
+    height: 120px;
+    display: grid;
+    place-content: center;
+    text-align: center;
+    font-size: 10px;
+    letter-spacing: 2px;
+    line-height: 1.8;
+    transform: rotate(12deg)
+}
+
+.aboutcopy .eyebrow {
+    margin-bottom: 22px
+}
+
+.aboutcopy h2 {
+    margin-bottom: 25px
+}
+
+.aboutcopy>p:not(.eyebrow) {
+    font-size: 12px
+}
+
+.values {
+    border-top: 1px solid #d0cfc8;
+    margin: 30px 0
+}
+
+.values p {
+    padding: 12px 0;
+    border-bottom: 1px solid #d0cfc8;
+    font-size: 11px;
+    margin: 0
+}
+
+.markets {
+    background: #d9d8d2
+}
+
+.marketlist {
+    border-top: 1px solid #b9b8b1
+}
+
+.marketlist>div {
+    display: grid;
+    grid-template-columns: 55px 1fr 30px;
+    gap: 20px;
+    align-items: center;
+    padding: 25px 0;
+    border-bottom: 1px solid #b9b8b1
+}
+
+.marketlist>div>span {
+    font: 20px "Playfair Display", serif;
+    color: #77766f
+}
+
+.marketlist h3 {
+    font: 500 21px "Playfair Display", serif;
+    margin: 0 0 4px
+}
+
+.marketlist p {
+    font-size: 11px;
+    color: #66655f;
+    margin: 0
+}
+
+.marketlist b {
+    font-size: 19px;
+    font-weight: 400
+}
+
+.process {
+    background: #1d1d1b;
+    color: #f4f3ee;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12%;
+    align-items: center
+}
+
+.process h2 {
+    font-size: clamp(42px, 4.6vw, 64px);
+    margin-bottom: 25px
+}
+
+.process>div:first-child>p:not(.eyebrow) {
+    max-width: 420px;
+    color: #b7b6af;
+    font-size: 12px;
+    line-height: 1.9;
+    margin: 0 0 28px
+}
+
+.steps {
+    border-top: 1px solid #55544f
+}
+
+.steps article {
+    display: grid;
+    grid-template-columns: 45px 1fr;
+    gap: 20px;
+    padding: 25px 0;
+    border-bottom: 1px solid #55544f
+}
+
+.steps article>span {
+    font: 20px "Playfair Display", serif;
+    color: #aaa9a2
+}
+
+.steps h3 {
+    font: 500 20px "Playfair Display", serif;
+    margin: 0 0 6px
+}
+
+.steps p {
+    font-size: 11px;
+    color: #b7b6af;
+    line-height: 1.8;
+    margin: 0
+}
+
+.contact {
+    background: #f3f2ef
+}
+
+.contacthead {
+    display: grid;
+    grid-template-columns: 1fr .7fr;
+    gap: 10%;
+    align-items: end;
+    margin-bottom: 55px
+}
+
+.contacthead>p {
+    max-width: 430px;
+    margin-bottom: 4px
+}
+
+.contactgrid {
+    display: grid;
+    grid-template-columns: .7fr 1.3fr;
+    gap: 10%;
+    border-top: 1px solid #d0cfc8;
+    padding-top: 36px
+}
+
+.contactgrid aside {
+    display: flex;
+    flex-direction: column;
+    gap: 24px
+}
+
+.contactgrid aside small {
+    font-size: 9px;
+    letter-spacing: 1.8px;
+    color: #77766f
+}
+
+.contactgrid aside p {
+    margin: 5px 0 0;
+    font-size: 13px
+}
+
+.contact form {
+    display: flex;
+    flex-direction: column;
+    gap: 17px
+}
+
+.formrow {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px
+}
+
+.contact label {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+    font-size: 10px;
+    color: #5c5b55
+}
+
+.contact input,
+.contact textarea,
+.contact select {
+    width: 100%;
+    border: 1px solid #d0cfc8;
+    background: #eeede8;
+    padding: 13px;
+    color: #1d1d1b;
+    outline: none;
+    font-size: 12px;
+    border-radius: 0
+}
+
+.contact input:focus,
+.contact textarea:focus,
+.contact select:focus {
+    border-color: #5d5c56
+}
+
+.contact textarea {
+    resize: vertical
+}
+
+.contact form .btn {
+    align-self: flex-start
+}
+
+.formnote,
+#status {
+    font-size: 10px;
+    color: #77766f;
+    margin: 0
+}
+
+footer {
+    background: #171717;
+    color: #f0efea;
+    padding: 55px 9% 20px
+}
+
+.footmain {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-bottom: 45px
+}
+
+.footbrand {
+    display: flex;
+    flex-direction: column;
+    line-height: 1
+}
+
+.footbrand strong {
+    font: 55px "Playfair Display", Georgia, serif;
+    letter-spacing: -5px
+}
+
+.footbrand b {
+    font-size: 15px;
+    letter-spacing: 7px;
+    font-weight: 400
+}
+
+.footbrand small {
+    font-size: 8px;
+    color: #aaa9a2;
+    margin-top: 8px
+}
+
+.footmain>p {
+    font: 16px/1.7 "Playfair Display", Georgia, serif;
+    color: #c5c4bd
+}
+
+.footmain>a:last-child {
+    font-size: 9px;
+    letter-spacing: 1.5px;
+    border-bottom: 1px solid #77766f;
+    padding-bottom: 8px
+}
+
+.footbottom {
+    border-top: 1px solid #45443f;
+    padding-top: 18px;
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    font-size: 8px;
+    letter-spacing: 1.2px;
+    color: #a4a39c
+}
+
+@media(max-width:850px) {
+    .header nav {
+        gap: 15px
+    }
+
+    .pad {
+        padding: 80px 6%
+    }
+
+    .about {
+        gap: 7%
+    }
+
+    .aboutvisual {
+        min-height: 520px
+    }
+
+    .process {
+        gap: 7%
+    }
+}
+
+@media(max-width:680px) {
+    .announcement {
+        padding: 0 5%;
+        font-size: 7px;
+        letter-spacing: 1px
+    }
+
+    .announcement span:last-child {
+        display: none
+    }
+
+    .header {
+        height: 82px;
+        padding: 8px 5%
+    }
+
+    .brand {
+        width: 125px
+    }
+
+    .brand svg {
+        height: 39px
+    }
+
+    .brand svg text {
+        font-size: 52px
+    }
+
+    .brand>b {
+        font-size: 13px;
+        letter-spacing: 6px
+    }
+
+    .brand small {
+        font-size: 6px
+    }
+
+    .menu {
+        display: block
+    }
+
+    .header nav {
+        display: none;
+        position: absolute;
+        top: 81px;
+        left: 0;
+        right: 0;
+        background: #f3f2ef;
+        padding: 18px 6% 25px;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0;
+        border-bottom: 1px solid #d0cfc8
+    }
+
+    .header nav.open {
+        display: flex
+    }
+
+    .header nav>a {
+        padding: 13px 0;
+        border-bottom: 1px solid #e1e0da
+    }
+
+    .header nav .navcta {
+        padding: 13px;
+        margin-top: 12px
+    }
+
+    .hero {
+        min-height: 620px;
+        height: calc(100vh - 114px)
+    }
+
+    .hero-copy {
+        width: 86%;
+        margin: 0 7%
+    }
+
+    .hero h1 {
+        font-size: clamp(48px, 13vw, 72px)
+    }
+
+    .hero-copy>p:not(.eyebrow) {
+        font-size: 13px
+    }
+
+    .actions {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 20px
+    }
+
+    .hero-foot {
+        padding: 14px 5%;
+        font-size: 7px;
+        letter-spacing: 1px
+    }
+
+    .hero-foot span:nth-child(2) {
+        display: none
+    }
+
+    .pad {
+        padding: 70px 6%
+    }
+
+    .intro>.eyebrow {
+        margin-bottom: 34px
+    }
+
+    .intro-grid,
+    .sectionhead,
+    .about,
+    .process,
+    .contacthead,
+    .contactgrid {
+        grid-template-columns: 1fr;
+        gap: 26px
+    }
+
+    .intro h2,
+    .sectionhead h2,
+    .about h2,
+    .contact h2 {
+        font-size: clamp(40px, 11vw, 58px)
+    }
+
+    .intro hr {
+        margin: 40px 0 20px
+    }
+
+    .tagline {
+        font-size: 26px
+    }
+
+    .sectionhead {
+        display: grid
+    }
+
+    .cards {
+        grid-template-columns: 1fr;
+        gap: 13px
+    }
+
+    .card {
+        height: 390px
+    }
+
+    .cardcopy {
+        left: 22px;
+        right: 20px;
+        bottom: 22px
+    }
+
+    .cardcopy h3 {
+        font-size: 27px
+    }
+
+    .aboutvisual {
+        min-height: 460px;
+        order: 2
+    }
+
+    .aboutcopy {
+        order: 1
+    }
+
+    .aboutphoto {
+        right: 5%
+    }
+
+    .caption {
+        right: 5%;
+        font-size: 7px
+    }
+
+    .stamp {
+        width: 100px;
+        height: 100px
+    }
+
+    .marketlist>div {
+        grid-template-columns: 35px 1fr 20px;
+        gap: 12px;
+        padding: 21px 0
+    }
+
+    .marketlist h3 {
+        font-size: 18px
+    }
+
+    .marketlist p {
+        font-size: 10px
+    }
+
+    .process {
+        gap: 40px
+    }
+
+    .process h2 {
+        font-size: 46px
+    }
+
+    .contacthead {
+        margin-bottom: 35px
+    }
+
+    .contactgrid {
+        gap: 40px
+    }
+
+    .formrow {
+        grid-template-columns: 1fr
+    }
+
+    footer {
+        padding: 42px 6% 20px
+    }
+
+    .footmain {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 25px
+    }
+
+    .footmain>p {
+        font-size: 14px
+    }
+
+    .footmain>a:last-child {
+        justify-self: start
+    }
+
+    .footbottom {
+        flex-direction: column;
+        gap: 10px
+    }
+
+    .footbottom span:last-child {
+        display: none
+    }
+}
+
+@media(prefers-reduced-motion:reduce) {
+    html {
+        scroll-behavior: auto
+    }
+
+    *,
+    *::before,
+    *::after {
+        transition: none !important
+    }
+}

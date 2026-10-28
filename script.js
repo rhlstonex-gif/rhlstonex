@@ -1,0 +1,7 @@
+const toggle = document.querySelector('.menu'), nav = document.querySelector('.header nav');
+toggle.addEventListener('click', () => { const open = nav.classList.toggle('open'); toggle.setAttribute('aria-expanded', String(open)); toggle.setAttribute('aria-label', open ? 'Close navigation' : 'Open navigation') });
+nav.querySelectorAll('a').forEach(a => a.addEventListener('click', () => { nav.classList.remove('open'); toggle.setAttribute('aria-expanded', 'false') }));
+document.getElementById('year').textContent = new Date().getFullYear();
+// Replace this placeholder with RHL StoneX's confirmed official email before publishing.
+const BUSINESS_EMAIL = 'ADD_OFFICIAL_EMAIL_HERE';
+document.getElementById('enquiry').addEventListener('submit', e => { e.preventDefault(); const d = new FormData(e.currentTarget), status = document.getElementById('status'); if (BUSINESS_EMAIL === 'ADD_OFFICIAL_EMAIL_HERE') { status.textContent = 'The form is ready, but the official business email has not been configured. Add it in script.js before publishing.'; return } const subject = encodeURIComponent('RHL StoneX enquiry — ' + d.get('interest')); const body = encodeURIComponent('Name: ' + d.get('name') + '\nCompany: ' + (d.get('company') || 'Not provided') + '\nEmail: ' + d.get('email') + '\nPhone: ' + (d.get('phone') || 'Not provided') + '\nInterest: ' + d.get('interest') + '\n\nProject details:\n' + d.get('message')); location.href = `mailto:${BUSINESS_EMAIL}?subject=${subject}&body=${body}` });
