@@ -22,10 +22,6 @@ document.getElementById('enquiry').addEventListener('submit', e => {
         data.get('message')
     ].join('\n');
     const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
-    const whatsappTab = document.createElement('a');
-    whatsappTab.href = whatsappUrl;
-    whatsappTab.target = '_blank';
-    whatsappTab.rel = 'noopener noreferrer';
-    whatsappTab.click();
-    status.textContent = 'Your enquiry is ready in WhatsApp. Review the details and tap Send to deliver it.';
+    status.textContent = 'Opening WhatsApp with your enquiry. Review the details and tap Send to deliver it.';
+    window.location.assign(whatsappUrl);
 });
